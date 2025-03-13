@@ -14,36 +14,24 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     
-    <!-- Voiceflow Chat Widget -->
-    <script type="text/javascript">
-      (function(d, t) {
-          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-          v.onload = function() {
-            window.voiceflow.chat.load({
-              verify: { projectID: '67c99e03183f1d64550a81a6' },
-              url: 'https://general-runtime.voiceflow.com',
-              versionID: 'production',
-              voice: {
-                url: "https://runtime-api.voiceflow.com"
-              },
-              assistant: {
-                stylesheet: "/css/voiceflow-design.css" // Link to our custom CSS file in GitHub repository
-              }
-            }).then(() => {
-              window.voiceflow.chat.proactive.clear();
-              window.voiceflow.chat.proactive.push({ 
-                type: 'text', 
-                payload: { message: 'Ready to transform your agency with AI?' }
-              }, { 
-                type: 'text', 
-                payload: { message: 'Click to chat with Beacon!' }
-              });
-            });
-          };
-          v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
-          v.type = "text/javascript"; 
-          s.parentNode.insertBefore(v, s);
-      })(document, 'script');
-    </script>
+  <script type="text/javascript">
+    (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '67c99e03183f1d64550a81a6' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            },
+            assistant: {
+              stylesheet:"/css/voiceflow-design.css"
+            }
+          });
+        }
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
   </body>
 </html>
