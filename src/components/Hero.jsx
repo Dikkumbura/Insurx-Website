@@ -12,11 +12,11 @@ const Hero = () => {
       <div className="max-w-container mx-auto px-6 py-24 md:py-32 lg:py-40">
         <div className="text-center relative z-10 max-w-4xl mx-auto">
           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 md:mb-8 leading-tight text-shadow-glow">
-            Pass the Torch to AI, Simplify Your Day, Ignite More Sales.
+            Pass the Torch to AI: Simplify Your Day. Ignite More Sales.
           </h1>
           
           <h2 className="font-body text-xl sm:text-2xl md:text-3xl font-medium text-white/90 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-            Automate Routine Tasks. Spark Real Growth
+            Automate Routine Tasks. Spark Real Growth.
           </h2>
           
           <div className="mt-12 md:mt-14">
