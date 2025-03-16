@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import LoadingIndicator from '../components/LoadingIndicator';
 import StephaniePic from './steph.jpeg';
 import KavinduPic from './kavindu.jpg';
+import { Link } from 'react-router-dom';
 
 const AboutUs = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -163,6 +164,55 @@ const AboutUs = () => {
               <p className="text-lg text-white/80 leading-relaxed">
                 Built by insurance professionals and powered by next-gen AI, we're not just keeping up with industry changes—we're driving them. InsurX combines deep industry knowledge with cutting-edge technology to deliver solutions that transform how insurance agencies operate.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-24 bg-navy">
+          <div className="max-w-container mx-auto px-6">
+            <div className="bg-charcoal p-12 rounded-2xl shadow-glow border border-white/10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-4 text-shadow-glow">
+                  Ready to Transform Your Insurance Agency?
+                </h2>
+                <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                  Schedule a personalized AI strategy call with our experts. We'll analyze your current operations and show you exactly how our AI solutions can boost your efficiency and profitability.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-1 mx-auto max-w-xl gap-12">
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">What to expect:</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mr-3 mt-1">
+                        <span className="text-primary font-bold">1</span>
+                      </div>
+                      <p className="text-white/80">Personalized assessment of your current operations</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mr-3 mt-1">
+                        <span className="text-primary font-bold">2</span>
+                      </div>
+                      <p className="text-white/80">Custom AI implementation strategy tailored to your needs</p>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="h-6 w-6 rounded-full bg-primary/20 flex items-center justify-center mr-3 mt-1">
+                        <span className="text-primary font-bold">3</span>
+                      </div>
+                      <p className="text-white/80">Clear ROI projections and implementation timeline</p>
+                    </li>
+                  </ul>
+                  
+                  <div className="mt-8">
+                    <Link to="/book" className="btn-primary group">
+                      Book Your Strategy Call
+                      <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

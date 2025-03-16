@@ -15,7 +15,14 @@ const Hero = () => {
             Pass the Torch to AI: Simplify Your Day. Ignite More Sales.
           </h1>
           
-          <h2 className="font-body text-xl sm:text-2xl md:text-3xl font-medium text-white/90 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-body text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-4 md:mb-6 max-w-3xl mx-auto leading-tight" 
+            style={{
+              textShadow: '0 0 10px rgba(255, 255, 255, 0.3)'
+            }}>
+            Comprehensive AI Solutions Tailored for the Insurance Industry
+          </h2>
+          
+          <h2 className="font-body text-xl sm:text-2xl md:text-2xl font-medium text-white/80 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
             Automate Routine Tasks. Spark Real Growth.
           </h2>
           

@@ -116,11 +116,11 @@ const AgencySolutions = () => {
                 How Our AI Assistant Helps Your Agency
               </h2>
               <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                Comprehensive AI solutions designed specifically for insurance agencies
+                Comprehensive AI Solutions Designed Specifically For Insurance Agencies
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-1 mx-auto max-w-xl gap-12">
               {/* Feature 1 */}
               <div className="bg-charcoal rounded-xl p-8 transition-all duration-300 hover:shadow-glow border border-white/10">
                 <div className="flex items-center mb-6">
@@ -264,7 +264,7 @@ const AgencySolutions = () => {
                 Why Insurance Agencies Choose InsurX AI Assistant
               </h2>
               <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                Measurable results that transform your insurance business
+                Measurable Results That Transform Your Insurance Business.
               </p>
             </div>
             
@@ -309,7 +309,7 @@ const AgencySolutions = () => {
                 </p>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-1 mx-auto max-w-xl gap-12">
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-4">What to expect:</h3>
                   <ul className="space-y-3">
@@ -339,57 +339,6 @@ const AgencySolutions = () => {
                       <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </Link>
                   </div>
-                </div>
-                
-                <div>
-                  <form className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-white/80 mb-1">Full Name</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        className="w-full px-4 py-2 bg-navy border border-white/10 rounded-md text-white placeholder-white/50
-                                 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="John Smith"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-white/80 mb-1">Email Address</label>
-                      <input 
-                        type="email" 
-                        id="email" 
-                        className="w-full px-4 py-2 bg-navy border border-white/10 rounded-md text-white placeholder-white/50
-                                 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="john@example.com"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-white/80 mb-1">Company Name</label>
-                      <input 
-                        type="text" 
-                        id="company" 
-                        className="w-full px-4 py-2 bg-navy border border-white/10 rounded-md text-white placeholder-white/50
-                                 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="Your Insurance Agency"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-white/80 mb-1">Message</label>
-                      <textarea 
-                        id="message" 
-                        rows="4" 
-                        className="w-full px-4 py-2 bg-navy border border-white/10 rounded-md text-white placeholder-white/50
-                                 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                        placeholder="Tell us about your agency and what you're looking to achieve..."
-                      ></textarea>
-                    </div>
-                    <button 
-                      type="submit" 
-                      className="w-full btn-primary"
-                    >
-                      Submit
-                    </button>
-                  </form>
                 </div>
               </div>
             </div>
