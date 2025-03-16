@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="text-center mb-8">
           <Logo size="large" className="mb-4" />
           <p className="text-white/60 mb-6">
-            Transforming insurance operations with cutting-edge AI solutions.
+            Transforming Insurance Operations with Cutting-edge AI Solutions.
           </p>
           <div className="flex justify-center space-x-4 mb-6">
             <a href="#" className="text-white/60 hover:text-primary transition-colors duration-300">

@@ -115,7 +115,7 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-            Comprehensive AI solutions tailored for the insurance industry
+            Comprehensive AI Solutions Tailored For The Insurance Industry
           </p>
         </div>
         

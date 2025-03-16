@@ -11,7 +11,7 @@ const Features = () => {
             Real Results. Proven Impact.
           </h2>
           <p className="text-xl text-white/80 max-w-2xl">
-            Our AI-powered solutions deliver measurable improvements for insurance agencies.
+          Measurable Results that Transform Your Insurance Business.
           </p>
         </div>
 

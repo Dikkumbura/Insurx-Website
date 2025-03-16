@@ -8,7 +8,7 @@ const Description = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-primary mb-6 text-shadow-glow">
-              Transforming Insurance Operations with AI
+            Transforming Insurance Operations with Cutting-Edge AI Solutions.
             </h2>
             <div>
               <p className="text-white/80 text-lg mb-6">

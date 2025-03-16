@@ -17,7 +17,7 @@ const WhyInsurX = () => {
               <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary rounded-full shadow-glow"></span>
             </h2>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mt-6">
-              We deliver specialized AI solutions designed specifically for insurance agencies
+            We Deliver Specialized AI Solutions Designed Specifically for Insurance Agencies.
             </p>
           </div>
           

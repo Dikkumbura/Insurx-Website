@@ -209,7 +209,7 @@ const ContactPage = () => {
                     </div>
                   </div>
                   <p className="text-white/60">
-                    We typically respond within 24 hours during business days
+                    We typically respond within 24 hours during business days.
                   </p>
                 </div>
               </div>
