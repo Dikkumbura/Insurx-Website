@@ -145,3 +145,69 @@
   @apply -translate-y-1 border-white/20 bg-charcoal;
   box-shadow: 0 0 15px rgba(255, 130, 0, 0.3);
 }
+
+/* Chatbot Glow Animation */
+.chat-glow-container {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  border-radius: 0.75rem;
+}
+
+.chat-glow-effect {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.chat-glow-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, 
+    rgba(255, 130, 0, 0.6),
+    rgba(255, 130, 0, 0.2),
+    rgba(255, 130, 0, 0.6)
+  );
+  background-size: 200% 100%;
+  animation: moveGradient 8s linear infinite;
+  filter: blur(6px);
+}
+
+.chat-glow-effect::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, 
+    rgba(255, 130, 0, 0.6),
+    rgba(255, 130, 0, 0.2),
+    rgba(255, 130, 0, 0.6)
+  );
+  background-size: 100% 200%;
+  animation: moveVerticalGradient 8s linear infinite;
+  filter: blur(6px);
+  mix-blend-mode: screen;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes moveVerticalGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 200%;
+  }
+}

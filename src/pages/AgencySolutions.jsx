@@ -9,7 +9,9 @@ import LoadingIndicator from '../components/LoadingIndicator';
 const AgencySolutions = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [showChatbot, setShowChatbot] = useState(false);
   const pageRef = useRef(null);
+  const chatbotContainerRef = useRef(null);
 
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
@@ -31,11 +33,73 @@ const AgencySolutions = () => {
         force3D: true
       });
       
+      // After page animation is complete, show chatbot
+      setTimeout(() => {
+        setShowChatbot(true);
+      }, 1000);
+      
       return () => {
         tl.kill();
       };
     }
   }, [isLoaded]);
+
+  // Voiceflow Chatbot Integration
+  useEffect(() => {
+    if (!isLoaded || !showChatbot) return;
+
+    // Delay chatbot initialization to prevent focus issues
+    const initializationDelay = setTimeout(() => {
+      // Remove any existing script to avoid duplicates
+      const existingScript = document.getElementById('voiceflow-script');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
+      const script = document.createElement('script');
+      script.id = 'voiceflow-script';
+      script.type = 'text/javascript';
+      script.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      script.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67dd9e0b39317273e2512a5b' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          assistant: {
+            stylesheet: "data:text/css;base64,LnZmcmMtd2lkZ2V0e2NvbG9yOiMwOTNiNWE7Zm9udC1mYW1pbHk6J3NhbiBzZXJpZicsIG1vbm9zcGFjZTtmb250LXNpemU6MTZweDt9LnZmcmMtaGVhZGVye2JhY2tncm91bmQtY29sb3I6IzI3MzQ0NTtjb2xvcjojZDZkZWViO2JvcmRlci1ib3R0b206MXB4IHNvbGlkICMxYzI5M2FiYTt9LnZmcmMtYXNzaXN0YW50LWluZm8tLXRpdGxlLCAudmZyYy1hc3Npc3RhbnQtaW5mby0tZGVzY3JpcHRpb257Y29sb3I6I2ZmZmZmZjt9LnZmcmMtY2hhdHtiYWNrZ3JvdW5kLWNvbG9yOiMyYjNiNTBmYztib3JkZXI6MS41cHggc29saWQgIzFjMjkzYWJhO2JveC1zaGFkb3c6I2ZmNzcwMDt9LnZmcmMtc3lzdGVtLXJlc3BvbnNlIC52ZnJjLW1lc3NhZ2V7YmFja2dyb3VuZC1jb2xvcjojMWMyMzMyNmM7Y29sb3I6I2ZmZmZmZjt9LnZmcmMtdXNlci1yZXNwb25zZSAudmZyYy1tZXNzYWdle2JhY2tncm91bmQtY29sb3I6IzIwMzEzZWNiO2NvbG9yOiNmZmZmZmY7fS52ZnJjLWNoYXQtaW5wdXQgdGV4dGFyZWF7YmFja2dyb3VuZC1jb2xvcjojZmY3NzAwICFpbXBvcnRhbnQ7Y29sb3I6I2ZmZmZmZiAhaW1wb3J0YW50O30udmZyYy1idXR0b257YmFja2dyb3VuZC1jb2xvcjojZmY5NTAwO2NvbG9yOiMxZjI5MzdiYjt0ZXh0LXNoYWRvdzojMWEyZDNhO30udmZyYy1pbnB1dC1jb250YWluZXIsIC52ZnJjLWNoYXQtaW5wdXR7YmFja2dyb3VuZC1jb2xvcjojMDkzYjVhICFpbXBvcnRhbnQ7fS5fNnI5eGVlM3tiYWNrZ3JvdW5kLWNvbG9yOiNmZjk1MDAgIWltcG9ydGFudDtjb2xvcjojMjczNDQ1ICFpbXBvcnRhbnQ7fS5fMWdkdmg5dDZ7Y29sb3I6I2ZmZmZmZjt9No "
+          },
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+          render: {
+            mode: 'embedded',
+            target: chatbotContainerRef.current
+          },
+          launch: {
+            autoFocus: false
+          }
+        });
+        
+        // Force blur after chat loads
+        setTimeout(() => {
+          if (document.activeElement) {
+            document.activeElement.blur();
+          }
+          // Force focus on body
+          document.body.focus();
+        }, 100);
+      };
+
+      document.body.appendChild(script);
+    }, 500);
+
+    return () => {
+      clearTimeout(initializationDelay);
+      if (document.getElementById('voiceflow-script')) {
+        document.getElementById('voiceflow-script').remove();
+      }
+    };
+  }, [isLoaded, showChatbot]);
 
   return (
     <div className="min-h-screen flex flex-col bg-navy">
@@ -64,16 +128,66 @@ const AgencySolutions = () => {
           <div className="max-w-container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight tracking-tight text-shadow-glow">
-                InsurX AI Assistant for Insurance Agencies
+                AgentX AI Assistant for Insurance Agencies
               </h1>
               
               <h2 className="text-2xl md:text-3xl font-medium text-white/90 mb-8 max-w-2xl mx-auto">
-                Transform Your Agency with Intelligent Automation
+                Try Our Demo and See How It Can Transform Your Agency
               </h2>
               
-              <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-                At InsurX, we help insurance agencies eliminate repetitive tasks, streamline operations, and increase profitability through cutting-edge AI technology. Our AI Assistant acts as your virtual producer, allowing your team to focus on what matters most—growing relationships and closing deals.
+              <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                AgentX AI Assistant helps insurance agencies eliminate repetitive tasks, streamline operations, and increase profitability through cutting-edge AI technology. Interact with our live demo below to experience how this virtual producer can help your team focus on what matters most—growing relationships and closing deals.
               </p>
+
+              {/* Interactive demo prompt */}
+              <div className="text-center mb-4">
+                <span className="inline-block px-4 py-1 bg-primary/20 text-primary rounded-full text-sm animate-pulse">
+                  👇 Interactive Demo - Try it out! 👇
+                </span>
+              </div>
+
+              {/* Chatbot Placeholder - always visible */}
+              <div className="w-full max-w-2xl mx-auto mb-12 relative">
+                {/* Outer container with the glow effect */}
+                <div className="chat-glow-container">
+                  <div className="chat-glow-effect"></div>
+                  
+                  {/* Actual chatbot container */}
+                  <div className="w-full h-[36rem] rounded-xl overflow-hidden border border-white/10"
+                    style={{ background: '#1A1A2E' }}>
+                    
+                    {/* Only render the actual chatbot container when showChatbot is true */}
+                    {showChatbot && (
+                      <div 
+                        ref={chatbotContainerRef}
+                        className="w-full h-full relative z-10"
+                      ></div>
+                    )}
+                    
+                    {/* Loading indicator shown until chatbot is ready */}
+                    {!showChatbot && (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div className="text-white/70 flex flex-col items-center">
+                          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+                          <p>Loading AgentX AI Assistant...</p>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Demo explanation text - positioned absolutely to the right on desktop */}
+                <div className="hidden md:block absolute -right-72 top-1/2 transform -translate-y-1/2 w-64 p-3 bg-charcoal/30 rounded-lg border border-white/10 text-sm text-white/80">
+                  <p><span className="text-primary font-semibold">Note:</span> This is a demonstration version of AgentX.</p>
+                  <p className="mt-2">Backend functionalities are not available in this demo as it's designed to showcase the UI and conversation flow.</p>
+                  <p className="mt-2">When implemented for your agency, all features can be fully customized to match your specific requirements.</p>
+                </div>
+              </div>
+              
+              {/* Mobile version of demo explanation - appears below chatbot on mobile */}
+              <div className="md:hidden w-full max-w-md mx-auto mb-8 p-3 bg-charcoal/30 rounded-lg border border-white/10 text-sm text-white/80 text-center">
+                <p><span className="text-primary font-semibold">Note:</span> This is a demo version. Backend functionalities are not available as it's designed to showcase the UI and conversation flow. When implemented, all features can be customized to your agency's needs.</p>
+              </div>
 
               {/* Feature List */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-3xl mx-auto">
