@@ -128,7 +128,7 @@ const AgencySolutions = () => {
           <div className="max-w-container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-8 leading-tight tracking-tight text-shadow-glow">
-                AgentX AI Assistant for Insurance Agencies
+                Agent X AI Assistant for Insurance Agencies
               </h1>
               
               <h2 className="text-2xl md:text-3xl font-medium text-white/90 mb-8 max-w-2xl mx-auto">
@@ -136,7 +136,7 @@ const AgencySolutions = () => {
               </h2>
               
               <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-                AgentX AI Assistant helps insurance agencies eliminate repetitive tasks, streamline operations, and increase profitability through cutting-edge AI technology. Interact with our live demo below to experience how this virtual producer can help your team focus on what matters most—growing relationships and closing deals.
+                Agent X AI Assistant helps insurance agencies eliminate repetitive tasks, streamline operations, and increase profitability through cutting-edge AI technology. Interact with our live demo below to experience how this virtual producer can help your team focus on what matters most—growing relationships and closing deals.
               </p>
 
               {/* Interactive demo prompt */}
@@ -169,7 +169,7 @@ const AgencySolutions = () => {
                       <div className="w-full h-full flex items-center justify-center">
                         <div className="text-white/70 flex flex-col items-center">
                           <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
-                          <p>Loading AgentX AI Assistant...</p>
+                          <p>Loading Agent X AI Assistant...</p>
                         </div>
                       </div>
                     )}
@@ -178,7 +178,7 @@ const AgencySolutions = () => {
                 
                 {/* Demo explanation text - positioned absolutely to the right on desktop */}
                 <div className="hidden md:block absolute -right-72 top-1/2 transform -translate-y-1/2 w-64 p-3 bg-charcoal/30 rounded-lg border border-white/10 text-sm text-white/80">
-                  <p><span className="text-primary font-semibold">Note:</span> This is a demonstration version of AgentX.</p>
+                  <p><span className="text-primary font-semibold">Note:</span> This is a demonstration version of Agent X.</p>
                   <p className="mt-2">Backend functionalities are not available in this demo as it's designed to showcase the UI and conversation flow.</p>
                   <p className="mt-2">When implemented for your agency, all features can be fully customized to match your specific requirements.</p>
                 </div>
